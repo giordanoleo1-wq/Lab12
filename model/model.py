@@ -102,7 +102,6 @@ class Model:
 
         for n in self.G.nodes():
             self._ricorsione(n, [n], 0, soglia )
-        print(self._percorso_ottimale)
         return self._percorso_ottimale, self._difficolta_ottimale
 
     def _ricorsione (self, node : Rifugio , percorso_corrente, difficolta_corrente, soglia):
