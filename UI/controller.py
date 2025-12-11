@@ -48,4 +48,20 @@ class Controller:
 
     """Implementare la parte di ricerca del cammino minimo"""
     # TODO
+    def handle_cammino_minimo(self, e):
+        soglia = float(self._view.txt_soglia.value)
+
+        percorso_ottimo, difficolta_ottimale = self._model.get_percorso_ottimo(soglia)
+        self._view.lista_visualizzazione_3.controls.clear()
+
+        for i in range(len(percorso_ottimo)-1):
+            rif1= percorso_ottimo[i]
+            rif2 = percorso_ottimo[i+1]
+            peso= self._model.G[rif1][rif2]["weight"]
+            self._view.lista_visualizzazione_3.controls.append(ft.Text(f"[{rif1.id}] {rif1.nome} ({rif1.localita})->[{rif2.id}] {rif2.nome} ({rif2.localita}) [{peso:.2f}] "))
+        self._view.page.update()
+
+
+
+
 
