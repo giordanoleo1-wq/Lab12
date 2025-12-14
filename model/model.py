@@ -64,14 +64,9 @@ class Model:
         # TODO
         lista_pesi=[]
         for e in self.G.edges():
-            p= self.G[e[0]][e[1]]['weight'] #self.G.edges[e[0], e[1]]
+            p= self.G[e[0]][e[1]]['weight']
             lista_pesi.append(p)
         return min(lista_pesi), max(lista_pesi)
-
-
-
-
-
 
 
 
